@@ -25,6 +25,8 @@ class Sorter {
 					}
 				}
 
+				console.log("test")
+
 				if(typeof this.collection === 'string') {
 					this.collection.
 				}
