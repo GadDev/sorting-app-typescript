@@ -8,17 +8,25 @@
 // }
 
 class Sorter {
-	constructor(public collection: number[]) {}
+	// "|" union type
+	constructor(public collection: number[] | string) {}
 
 	sort(): void {
 		const { length } = this.collection;
 		//bubble sorting
 		for (let i = 0; i < length; i++) {
 			for (let j = 0; j < length - i - 1; j++) {
-				if (this.collection[j] > this.collection[j + 1]) {
-					const indexLeftSide = this.collection[j];
-					this.collection[j] = this.collection[j + 1];
-					this.collection[j + 1] = indexLeftSide;
+				//Type guards
+				if (this.collection instanceof Array) {
+					if (this.collection[j] > this.collection[j + 1]) {
+						const indexLeftSide = this.collection[j];
+						this.collection[j] = this.collection[j + 1];
+						this.collection[j + 1] = indexLeftSide;
+					}
+				}
+
+				if(typeof this.collection === 'string') {
+					this.collection.
 				}
 			}
 		}
